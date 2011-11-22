@@ -352,7 +352,7 @@ void WebPage::release()
     deleteLater();
 }
 
-bool WebPage::render(const QString &fileName)
+bool WebPage::render(const QString &fileName, int quality)
 {
     if (m_mainFrame->contentsSize().isEmpty())
         return false;
@@ -369,7 +369,7 @@ bool WebPage::render(const QString &fileName)
         return exportGif(buffer, fileName);
     }
 
-    return buffer.save(fileName);
+    return buffer.save(fileName, 0, quality);
 }
 
 QImage WebPage::renderImage()

@@ -81,7 +81,7 @@ public slots:
     void release();
 
     QVariant evaluate(const QString &code);
-    bool render(const QString &fileName);
+    bool render(const QString &fileName, int quality = -1);
     bool injectJs(const QString &jsFilePath);
     void _appendScriptElement(const QString &scriptUrl);
     void uploadFile(const QString &selector, const QString &fileName);
